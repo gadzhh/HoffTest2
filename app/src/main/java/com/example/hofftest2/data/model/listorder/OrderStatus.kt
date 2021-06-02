@@ -1,8 +1,8 @@
-package com.example.hofftest2.data.model
+package com.example.hofftest2.data.model.listorder
 
 import com.google.gson.annotations.SerializedName
 
-data class Status(
+data class OrderStatus(
     @SerializedName("id") val id: Int,
     @SerializedName("name") val name: String
 )

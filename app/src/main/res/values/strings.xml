@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">HoffTest2</string>
+    <string name="Services">Услуги</string>
+    <string name="undo_order">Отменить заказ</string>
+    <string name="repeat_order">Повторить заказ</string>
+    <string name="order_sum">Сумма заказа</string>
+    <string name="paid_with_bonuses">Оплачено бонусами</string>
+    <string name="discounts">Скидки</string>
+    <string name="total">Итого</string>
+    <string name="service">Услуга сборки</string>
 </resources>

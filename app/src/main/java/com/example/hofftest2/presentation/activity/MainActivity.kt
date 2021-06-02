@@ -1,8 +1,10 @@
-package com.example.hofftest2
+package com.example.hofftest2.presentation.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.hofftest2.screens.OrderFragment
+import com.example.hofftest2.R
+import com.example.hofftest2.presentation.detail.ui.DetailFragment
+import com.example.hofftest2.presentation.order.ui.OrderFragment
 
 class MainActivity : AppCompatActivity() {
 
