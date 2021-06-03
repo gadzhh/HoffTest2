@@ -2,6 +2,7 @@ package com.example.hofftest2.di
 
 import android.content.Context
 import com.example.hofftest2.App
+import com.example.hofftest2.presentation.activity.MainActivity
 import com.example.hofftest2.presentation.detail.ui.DetailFragment
 import com.example.hofftest2.presentation.order.ui.OrderFragment
 import dagger.BindsInstance
@@ -14,7 +15,8 @@ import javax.inject.Singleton
         NetworkModule::class,
         OrdersModule::class,
         DetailModule::class,
-        SchedulersModule::class
+        SchedulersModule::class,
+        NavigationModule::class
     ]
 )
 interface AppComponent {
@@ -23,6 +25,7 @@ interface AppComponent {
     fun inject(orders: OrdersModule)
     fun inject(dFragment: DetailFragment)
     fun inject(detail: DetailModule)
+    fun inject(main: MainActivity)
 
     @Component.Builder
     interface Builder {

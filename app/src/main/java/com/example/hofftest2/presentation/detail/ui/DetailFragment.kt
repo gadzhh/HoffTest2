@@ -12,12 +12,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hofftest2.App
 import com.example.hofftest2.R
 import com.example.hofftest2.data.model.detailorder.OrderDetail
+import com.example.hofftest2.presentation.Screens
 import com.example.hofftest2.presentation.detail.mvp.DetailPresenter
 import com.example.hofftest2.presentation.detail.mvp.DetailView
 import com.example.hofftest2.presentation.detail.ui.adapter.DetailProductItemsAdapter
 import com.example.hofftest2.presentation.detail.ui.adapter.DetailServiceItemsAdapter
 import com.example.hofftest2.presentation.order.ui.OrderFragment
 import com.example.hofftest2.utils.format
+import com.github.terrakok.cicerone.Router
 import javax.inject.Inject
 
 class DetailFragment : Fragment(), DetailView {
@@ -31,6 +33,9 @@ class DetailFragment : Fragment(), DetailView {
 
     @Inject
     lateinit var presenter: DetailPresenter
+
+    @Inject
+    lateinit var router: Router
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -66,10 +71,8 @@ class DetailFragment : Fragment(), DetailView {
 
         toolbar = view.findViewById(R.id.toolbar_detail)
         toolbar.setNavigationOnClickListener {
-            activity?.supportFragmentManager
-                ?.beginTransaction()
-                ?.add(R.id.container_for_fragment, OrderFragment())
-                ?.commit()
+
+            router.navigateTo(Screens.orderScreen())
         }
     }
 
@@ -126,5 +129,26 @@ class DetailFragment : Fragment(), DetailView {
 
     override fun showError(error: String) {
         Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
+    }
+
+    companion object {
+
+        fun newInstance(
+            id: String,
+            productNumber: String,
+            productDateTime: Int,
+            productDelivery: String
+        ): DetailFragment {
+
+            val bundle = Bundle()
+            bundle.putString("id", id)
+            bundle.putString("number", productNumber)
+            bundle.putInt("dateTime", productDateTime)
+            bundle.putString("delivery", productDelivery)
+
+            val fragment = DetailFragment()
+            fragment.arguments = bundle
+            return fragment
+        }
     }
 }

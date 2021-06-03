@@ -12,11 +12,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hofftest2.App
 import com.example.hofftest2.R
 import com.example.hofftest2.data.model.listorder.OrderList
+import com.example.hofftest2.presentation.Screens
 import com.example.hofftest2.presentation.detail.ui.DetailFragment
 import com.example.hofftest2.presentation.order.ui.adapter.ClickListener
 import com.example.hofftest2.presentation.order.mvp.OrderPresenter
 import com.example.hofftest2.presentation.order.mvp.OrderView
 import com.example.hofftest2.presentation.order.ui.adapter.OrderItemsAdapter
+import com.github.terrakok.cicerone.Router
 import javax.inject.Inject
 
 class OrderFragment : Fragment(), OrderView, ClickListener {
@@ -27,6 +29,9 @@ class OrderFragment : Fragment(), OrderView, ClickListener {
 
     @Inject
     lateinit var presenter: OrderPresenter
+
+    @Inject
+    lateinit var router: Router
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -92,9 +97,9 @@ class OrderFragment : Fragment(), OrderView, ClickListener {
         val fragment = DetailFragment()
         fragment.arguments = bundle
 
-        activity?.supportFragmentManager
-            ?.beginTransaction()
-            ?.add(R.id.container_for_fragment, fragment)
-            ?.commit()
+        router.navigateTo(Screens.detailScreen(id = id,
+                                               productNumber = productNumber,
+                                               productDateTime = productDateTime,
+                                               productDelivery = productDelivery))
     }
 }
