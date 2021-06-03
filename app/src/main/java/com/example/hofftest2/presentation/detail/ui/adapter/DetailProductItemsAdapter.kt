@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.hofftest2.R
 import com.example.hofftest2.data.model.detailorder.DetailItems
+import com.example.hofftest2.databinding.DetailProductItemsBinding
 
 class DetailProductItemsAdapter :
     RecyclerView.Adapter<DetailProductItemsAdapter.DetailItemsHolder>() {
@@ -22,27 +23,24 @@ class DetailProductItemsAdapter :
         notifyDataSetChanged()
     }
 
-    class DetailItemsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        private val ivProduct: ImageView = itemView.findViewById(R.id.iv_product)
-        private val tvName: TextView = itemView.findViewById(R.id.tv_name)
-        private val tvArticul: TextView = itemView.findViewById(R.id.tv_articul)
-        private val tvPrice: TextView = itemView.findViewById(R.id.tv_price)
-        private val tvNumber: TextView = itemView.findViewById(R.id.tv_number)
+    class DetailItemsHolder(private val itemBinding: DetailProductItemsBinding) :
+        RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bind(items: DetailItems) {
-            ivProduct.load(items.image)
-            tvName.text = items.name
-            tvArticul.text = items.articul
-            tvPrice.text = "${items.price} ₽"
-            tvNumber.text = "${items.quantity} ШТ"
+            with(itemBinding) {
+                ivProduct.load(items.image)
+                tvName.text = items.name
+                tvArticul.text = items.articul
+                tvPrice.text = "${items.price} ₽"
+                tvNumber.text = "${items.quantity} ШТ"
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailItemsHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.detail_product_items, parent, false)
-        return DetailItemsHolder(view)
+        val itemBinding =
+            DetailProductItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return DetailItemsHolder(itemBinding)
     }
 
     override fun onBindViewHolder(holder: DetailItemsHolder, position: Int) =

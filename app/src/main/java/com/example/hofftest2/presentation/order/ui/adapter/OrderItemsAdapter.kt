@@ -1,18 +1,14 @@
 package com.example.hofftest2.presentation.order.ui.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.example.hofftest2.R
 import com.example.hofftest2.data.model.listorder.OrderItems
+import com.example.hofftest2.databinding.OrderItemsBinding
 import com.example.hofftest2.utils.format
 
-
-class OrderItemsAdapter(clickListener: ClickListener):
+class OrderItemsAdapter(clickListener: ClickListener) :
     RecyclerView.Adapter<OrderItemsAdapter.OrderItemsHolder>() {
 
     private var items = ArrayList<OrderItems>()
@@ -25,34 +21,29 @@ class OrderItemsAdapter(clickListener: ClickListener):
         notifyDataSetChanged()
     }
 
-    inner class OrderItemsHolder(itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
-
-        private val tvNumber: TextView = itemView.findViewById(R.id.tv_number)
-        private val tvData: TextView = itemView.findViewById(R.id.tv_data)
-        private val tvStatus: TextView = itemView.findViewById(R.id.tv_status)
-        private val tvDelivery: TextView = itemView.findViewById(R.id.tv_delivery)
-        private val tvPrice: TextView = itemView.findViewById(R.id.tv_price)
-        private val ivDelivery: ImageView = itemView.findViewById(R.id.iv_delivery)
+    inner class OrderItemsHolder(private val itemBinding: OrderItemsBinding) :
+        RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bind(item: OrderItems) {
+            with(itemBinding) {
+                tvNumber.text = "№ ${item.number}"
+                tvData.text = item.dateTime.format()
+                tvStatus.text = item.orderStatus.name
+                ivDelivery.load(item.delivery.icon)
+                tvDelivery.text = item.delivery.name
+                tvPrice.text = "${item.sum} ₽"
 
-            tvNumber.text = "№ ${item.number}"
-            tvData.text = item.dateTime.format()
-            tvStatus.text = item.orderStatus.name
-            ivDelivery.load(item.delivery.icon)
-            tvDelivery.text = item.delivery.name
-            tvPrice.text = "${item.sum} ₽"
-
-            tvPrice.setOnClickListener {
-                dListener.buttonClick(item.id, item.number, item.dateTime, item.delivery.name)
+                tvPrice.setOnClickListener {
+                    dListener.buttonClick(item.id, item.number, item.dateTime, item.delivery.name)
+                }
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderItemsHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.order_items, parent, false)
-        return OrderItemsHolder(view)
+        val itemBinding =
+            OrderItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return OrderItemsHolder(itemBinding)
     }
 
     override fun onBindViewHolder(holder: OrderItemsHolder, position: Int) =

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.hofftest2.R
 import com.example.hofftest2.data.model.detailorder.Services
+import com.example.hofftest2.databinding.DetailServicesItemsBinding
 
 class DetailServiceItemsAdapter :
     RecyclerView.Adapter<DetailServiceItemsAdapter.ServicesItemsHolder>() {
@@ -22,24 +23,22 @@ class DetailServiceItemsAdapter :
         notifyDataSetChanged()
     }
 
-    class ServicesItemsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ServicesItemsHolder(private val itemBinding: DetailServicesItemsBinding) :
+        RecyclerView.ViewHolder(itemBinding.root) {
 
-        private val ivIcon: ImageView = itemView.findViewById(R.id.iv_icon)
-        private val tvName: TextView = itemView.findViewById(R.id.tv_name)
-        private val tvPrice: TextView = itemView.findViewById(R.id.tv_price)
-
-        @SuppressLint("SetTextI18n")
         fun bind(items: Services) {
-            ivIcon.load(items.icon)
-            tvName.text = items.name
-            tvPrice.text = "${items.price} ₽"
+            with(itemBinding) {
+                ivIcon.load(items.icon)
+                tvName.text = items.name
+                tvPrice.text = "${items.price} ₽"
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ServicesItemsHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.detail_services_items, parent, false)
-        return ServicesItemsHolder(view)
+        val itemsBinding =
+            DetailServicesItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ServicesItemsHolder(itemsBinding)
     }
 
     override fun onBindViewHolder(holder: ServicesItemsHolder, position: Int) =

@@ -12,16 +12,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hofftest2.App
 import com.example.hofftest2.R
 import com.example.hofftest2.data.model.listorder.OrderList
+import com.example.hofftest2.databinding.FragmentOrderBinding
 import com.example.hofftest2.presentation.Screens
 import com.example.hofftest2.presentation.detail.ui.DetailFragment
-import com.example.hofftest2.presentation.order.ui.adapter.ClickListener
 import com.example.hofftest2.presentation.order.mvp.OrderPresenter
 import com.example.hofftest2.presentation.order.mvp.OrderView
+import com.example.hofftest2.presentation.order.ui.adapter.ClickListener
 import com.example.hofftest2.presentation.order.ui.adapter.OrderItemsAdapter
 import com.github.terrakok.cicerone.Router
 import javax.inject.Inject
 
 class OrderFragment : Fragment(), OrderView, ClickListener {
+
+    private var _binding: FragmentOrderBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var adapter: OrderItemsAdapter
     private lateinit var progress: FrameLayout
@@ -37,8 +41,9 @@ class OrderFragment : Fragment(), OrderView, ClickListener {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_order, container, false)
+    ): View {
+        _binding = FragmentOrderBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,11 +72,11 @@ class OrderFragment : Fragment(), OrderView, ClickListener {
     }
 
     override fun showProgress() {
-        progress.visibility = View.VISIBLE
+        binding.progress.visibility = View.VISIBLE
     }
 
     override fun hideProgress() {
-        progress.visibility = View.GONE
+        binding.progress.visibility = View.GONE
     }
 
     override fun showOrders(orders: OrderList) {
@@ -97,9 +102,18 @@ class OrderFragment : Fragment(), OrderView, ClickListener {
         val fragment = DetailFragment()
         fragment.arguments = bundle
 
-        router.navigateTo(Screens.detailScreen(id = id,
-                                               productNumber = productNumber,
-                                               productDateTime = productDateTime,
-                                               productDelivery = productDelivery))
+        router.navigateTo(
+            Screens.detailScreen(
+                id = id,
+                productNumber = productNumber,
+                productDateTime = productDateTime,
+                productDelivery = productDelivery
+            )
+        )
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
