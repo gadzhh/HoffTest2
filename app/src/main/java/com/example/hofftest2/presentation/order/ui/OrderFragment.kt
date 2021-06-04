@@ -93,11 +93,12 @@ class OrderFragment : Fragment(), OrderView, ClickListener {
         productDateTime: Int,
         productDelivery: String
     ) {
-        val bundle = Bundle()
-        bundle.putString("id", id)
-        bundle.putString("number", productNumber)
-        bundle.putInt("dateTime", productDateTime)
-        bundle.putString("delivery", productDelivery)
+        val bundle = Bundle().apply {
+            putString("id", id)
+            putString("number", productNumber)
+            putInt("dateTime", productDateTime)
+            putString("delivery", productDelivery)
+        }
 
         val fragment = DetailFragment()
         fragment.arguments = bundle

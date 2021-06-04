@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="@dimen/toolbar_text_size"
             tools:text="№ М2368692" />
     </androidx.appcompat.widget.Toolbar>
 
@@ -69,9 +69,9 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:text="@string/order_date"
                     android:textSize="12sp" />
 
@@ -79,9 +79,9 @@
                     android:id="@+id/tv_dataOrder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     tools:text="от 18 июня 2020, 10:19" />
@@ -94,9 +94,9 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:text="@string/status"
                     android:textSize="12sp" />
 
@@ -104,9 +104,9 @@
                     android:id="@+id/tv_status_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:textColor="#00A55F"
                     android:textSize="14sp"
                     tools:text="В работе" />
@@ -119,9 +119,9 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:text="@string/delivery_way"
                     android:textSize="12sp" />
 
@@ -129,9 +129,9 @@
                     android:id="@+id/tv_detail_delivery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     tools:text="Доставка курьером" />
@@ -150,18 +150,18 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:text="@string/delivery_date" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_deliveryData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:textColor="@color/black"
                     tools:text="21.06.2020" />
 
@@ -173,18 +173,18 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:text="@string/build_date" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_build_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:textColor="@color/black"
                     tools:text="21.06.2020" />
 
@@ -196,18 +196,18 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:text="@string/delivery_address" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_delivery_adress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:textColor="@color/black"
                     tools:text="Москва, ул. Ленина, д. 10, кв. 10" />
 
@@ -219,18 +219,18 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:text="@string/payment_method" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_payment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:textColor="@color/black"
                     tools:text="Банковской картой онлайн" />
 
@@ -242,18 +242,18 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:text="@string/bonus_card" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_bonus_card"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:textColor="@color/black"
                     tools:text="1101323232323" />
 
@@ -265,18 +265,18 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:text="@string/processed_in_a_shop" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_from_magazine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="@dimen/tv_titles_margin_start"
+                    android:layout_marginTop="@dimen/tv_titles_margin_top"
+                    android:layout_marginBottom="@dimen/tv_titles_margin_bottom"
                     android:textColor="@color/black"
                     android:text="@string/magazine" />
             </LinearLayout>
@@ -390,7 +390,7 @@
                     android:id="@+id/tv_discount_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_margin="@dimen/services_margin"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_payed_bonuses_number"
@@ -400,7 +400,7 @@
                     android:id="@+id/tv_total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_margin="@dimen/services_margin"
                     android:text="@string/total"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -411,7 +411,7 @@
                     android:id="@+id/tv_total_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_margin="@dimen/services_margin"
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -428,7 +428,7 @@
                 android:id="@+id/tv_rv_products_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_margin="@dimen/tv_products_margin"
                 android:text="@string/products"
                 android:textColor="@color/black"
                 android:textSize="16sp" />

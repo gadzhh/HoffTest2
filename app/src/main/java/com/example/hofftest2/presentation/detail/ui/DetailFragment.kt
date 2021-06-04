@@ -14,7 +14,7 @@ import com.example.hofftest2.presentation.detail.mvp.DetailPresenter
 import com.example.hofftest2.presentation.detail.mvp.DetailView
 import com.example.hofftest2.presentation.detail.ui.adapter.DetailProductItemsAdapter
 import com.example.hofftest2.presentation.detail.ui.adapter.DetailServiceItemsAdapter
-import com.example.hofftest2.utils.format
+import com.example.hofftest2.utils.dateTimeFormat
 import com.github.terrakok.cicerone.Router
 import javax.inject.Inject
 
@@ -49,11 +49,11 @@ class DetailFragment : Fragment(), DetailView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initViews(view)
+        initViews()
         initPresenter()
     }
 
-    private fun initViews(view: View) {
+    private fun initViews() {
 
         detailProductsAdapter = DetailProductItemsAdapter()
         detailServicesAdapter = DetailServiceItemsAdapter()
@@ -98,7 +98,7 @@ class DetailFragment : Fragment(), DetailView {
             tvBuildDate.text = detail.deliveryTime.dateAndTime.date
             tvDeliveryData.text = detail.deliveryTime.dateAndTime.time
             tvToolbarDetail.text = arguments?.getString("number").orEmpty()
-            tvDataOrder.text = arguments?.getInt("dateTime")?.format()
+            tvDataOrder.text = arguments?.getInt("dateTime")?.dateTimeFormat()
             tvDetailDelivery.text = arguments?.getString("delivery").orEmpty()
         }
     }
@@ -116,11 +116,12 @@ class DetailFragment : Fragment(), DetailView {
             productDelivery: String
         ): DetailFragment {
 
-            val bundle = Bundle()
-            bundle.putString("id", id)
-            bundle.putString("number", productNumber)
-            bundle.putInt("dateTime", productDateTime)
-            bundle.putString("delivery", productDelivery)
+            val bundle = Bundle().apply {
+                putString("id", id)
+                putString("number", productNumber)
+                putInt("dateTime", productDateTime)
+                putString("delivery", productDelivery)
+            }
 
             val fragment = DetailFragment()
             fragment.arguments = bundle
