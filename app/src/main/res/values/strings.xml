@@ -8,4 +8,15 @@
     <string name="discounts">Скидки</string>
     <string name="total">Итого</string>
     <string name="service">Услуга сборки</string>
+    <string name="order_date">Дата заказа</string>
+    <string name="status">Статус</string>
+    <string name="delivery_way">Способ доставки</string>
+    <string name="delivery_date">Дата доставки</string>
+    <string name="build_date">Дата сборки</string>
+    <string name="delivery_address">Адрес доставки</string>
+    <string name="payment_method">Способ оплаты</string>
+    <string name="bonus_card">Бонусная карта</string>
+    <string name="magazine">Hoff Автозаводская</string>
+    <string name="processed_in_a_shop">Оформлен в магазине</string>
+    <string name="products">Товары</string>
 </resources>

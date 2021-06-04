@@ -72,7 +72,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Дата заказа"
+                    android:text="@string/order_date"
                     android:textSize="12sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -97,7 +97,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Статус"
+                    android:text="@string/status"
                     android:textSize="12sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -122,7 +122,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Способ доставки"
+                    android:text="@string/delivery_way"
                     android:textSize="12sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -153,7 +153,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Дата доставки" />
+                    android:text="@string/delivery_date" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_deliveryData"
@@ -176,7 +176,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Дата сборки" />
+                    android:text="@string/build_date" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_build_date"
@@ -199,7 +199,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Адрес доставки" />
+                    android:text="@string/delivery_address" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_delivery_adress"
@@ -222,7 +222,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Способ оплаты" />
+                    android:text="@string/payment_method" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_payment"
@@ -245,7 +245,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Бонусная карта" />
+                    android:text="@string/bonus_card" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_bonus_card"
@@ -268,7 +268,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Оформлен в магазине" />
+                    android:text="@string/processed_in_a_shop" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_from_magazine"
@@ -278,7 +278,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
                     android:textColor="@color/black"
-                    android:text="Hoff Автозаводская" />
+                    android:text="@string/magazine" />
             </LinearLayout>
 
             <View
@@ -429,7 +429,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="Товары"
+                android:text="@string/products"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
